@@ -1,7 +1,9 @@
-<?php
+<?php include '../template/menu.php'; ?>
 
-echo 'Fabiano aprendendo tudo sobre o git.';
+    <div class="row">
+         <!-- o código xs para especificar entre smartfone e tablet -->
+      <div class="col-xs-1">.col-md-1</div>
+      <div class="col-xs-1">.col-md-1</div>
+      <div class="col-xs-1">.col-md-1</div>
+    </div>
 
-echo 'Adicionando uma linha';
-
-?>
