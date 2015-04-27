@@ -2,6 +2,7 @@
 
 include '../../model/Usuario.php';
 
+
 class UsuarioController {
     //put your code here
     

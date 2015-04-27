@@ -1,7 +1,7 @@
 <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
 <?php
-include '../../control/UsuarioController.php';
+
 include '../../template/menu.php';
 ?>
 
@@ -9,13 +9,13 @@ include '../../template/menu.php';
 
 
 <?php
-$usuarioController = new UsuarioController();
+$tipousuarioController = new TipoUsuarioController();
 ?>
 
 <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-primary">
         <!-- Default panel contents -->
-        <div class="panel-heading">Usuários cadastrados</div>
+        <div class="panel-heading">Tipos de usuários cadastrados</div>
         <div class="panel-body">
 
             <button type="button" class="btn btn-primary btn-sm col-md-offset-11" aria-label="Left Align">
@@ -25,15 +25,11 @@ $usuarioController = new UsuarioController();
             <table class="table table-striped table-hover">
                 <tr>
                     <th>
-                        Id
+                        Tipo_Id
                     </th>
 
                     <th>
                         Nome
-                    </th>
-
-                    <th>
-                        Email
                     </th>
 
                     <th>
@@ -45,20 +41,20 @@ $usuarioController = new UsuarioController();
                     </th>
                 </tr>
                 <?php
-                foreach ($usuarioController->findAll() as $usuario) {
+                foreach ($usuarioController->findAll() as $tipo_usuario) {
                     ?>
                     <tr>
-                        <td><?php echo $usuario->id; ?></td>
-                        <td><?php echo $usuario->descricao; ?></td>
-                        <td><?php echo $usuario->email; ?></td>
+                        <td><?php echo $tipo_usuario->tipo_id; ?></td>
+                        <td><?php echo $tipo_usuario->descricao; ?></td>
+      
                         <td>
-                            <?php if ($usuario->status == "ativo") {
+                            <?php if ($tipo_usuario->status == "ativo") {
                                 ?>
-                                <span class="label label-success"><?php echo $usuario->status; ?></span>
+                                <span class="label label-success"><?php echo $tipo_usuario->status; ?></span>
                                 <?php
                             } else {
                                 ?>
-                                <span class="label label-danger"><?php echo $usuario->status; ?></span>
+                                <span class="label label-danger"><?php echo $tipo_usuario->status; ?></span>
                                 <?php }
                             ?>
                         </td>
@@ -84,3 +80,5 @@ $usuarioController = new UsuarioController();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../js/bootstrap.min.js"></script>
+
+
