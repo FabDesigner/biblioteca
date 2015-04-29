@@ -1,12 +1,16 @@
-<?php
+}<?php
 
 include '../../conexao/Conexao.php';
 
-class TipoUsuario {
+
+class Autor {
+    //put your code here
+
 
     //put your code here
     private $id;
     private $descricao;
+    private $telefone;
 
     function getId() {
         return $this->id;
@@ -14,6 +18,10 @@ class TipoUsuario {
 
     function getDescricao() {
         return $this->descricao;
+    }
+
+    function getTelefone() {
+        return $this->telefone;
     }
 
     function setId($id) {
@@ -24,11 +32,19 @@ class TipoUsuario {
         $this->descricao = $descricao;
     }
 
+    function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
     function findAll() {
-        $sql = "SELECT * FROM tipo_usuario";
+        $sql = "SELECT * FROM autor";
         $query = Conexao::prepare($sql);
         $query->Execute();
         return $query->fetchAll();
-    }
+    }     
 
+    
 }
+
+
+

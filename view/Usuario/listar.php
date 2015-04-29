@@ -35,7 +35,9 @@ $usuarioController = new UsuarioController();
                     <th>
                         Email
                     </th>
-
+                    <th>
+                        Senha
+                    </th>
                     <th>
                         Status
                     </th>
@@ -51,6 +53,7 @@ $usuarioController = new UsuarioController();
                         <td><?php echo $usuario->id; ?></td>
                         <td><?php echo $usuario->descricao; ?></td>
                         <td><?php echo $usuario->email; ?></td>
+                        <td><?php echo $usuario->senha; ?></td>
                         <td>
                             <?php if ($usuario->status == "ativo") {
                                 ?>
