@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/biblioteca/model/TipoUsuario.php</file>
-            <file>file:/C:/wamp/www/biblioteca/view/Usuario/autor.php</file>
-            <file>file:/C:/wamp/www/biblioteca/model/Autor.php</file>
-            <file>file:/C:/wamp/www/biblioteca/control/AutorController.php</file>
+            <file>file:/C:/wamp/www/biblioteca/model/Editora.php</file>
+            <file>file:/C:/wamp/www/biblioteca/control/EditoraController.php</file>
+            <file>file:/C:/wamp/www/biblioteca/view/Usuario/editora.php</file>
+            <file>file:/C:/wamp/www/biblioteca/model/Usuario.php</file>
         </group>
     </open-files>
 </project-private>
