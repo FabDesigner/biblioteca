@@ -3,14 +3,9 @@
 <?php
 include '../../control/UsuarioController.php';
 include '../../template/menu.php';
-?>
-
-
-
-
-<?php
 $usuarioController = new UsuarioController();
 ?>
+
 
 <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-primary">
@@ -20,7 +15,7 @@ $usuarioController = new UsuarioController();
 
             <button type="button" class="btn btn-primary btn-sm col-md-offset-11" aria-label="Left Align">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                <a href="http://www.globo.com" target="_blank" style="color: #ffffff; text-decoration: none">adicionar</a>
+                <a href="adicionar.php" style="color: #ffffff; text-decoration: none">adicionar</a>
             </button><br><br>
             <table class="table table-striped table-hover">
                 <tr>
@@ -41,10 +36,14 @@ $usuarioController = new UsuarioController();
                     <th>
                         Status
                     </th>
-
+                    <th>
+                        Tipo
+                    </th>
+                   
                     <th>
                         Ações
                     </th>
+                     
                 </tr>
                 <?php
                 foreach ($usuarioController->findAll() as $usuario) {
@@ -54,6 +53,8 @@ $usuarioController = new UsuarioController();
                         <td><?php echo $usuario->descricao; ?></td>
                         <td><?php echo $usuario->email; ?></td>
                         <td><?php echo $usuario->senha; ?></td>
+                        
+                        
                         <td>
                             <?php if ($usuario->status == "ativo") {
                                 ?>
@@ -65,18 +66,23 @@ $usuarioController = new UsuarioController();
                                 <?php }
                             ?>
                         </td>
+                        
                         <td>
+                            <?php echo $usuario->tipo_descricao ?>
+                        </td>
+                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-info dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                                     Ações
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Excluir</a></li>    
+                                    <li role="presentation"><?php echo "<a href='editar.php?acao=atualizar&id=".$usuario->id."'>Editar</a>" ?></li>
+                                    <li role="presentation"><?php echo "<a href='listar.php?acao=deletar&id=".$usuario->id."'>Excluir</a>" ?></li>    
                                 </ul>
                             </div>
                         </td>
+                        
                     </tr>
                 <?php } ?>
             </table>
